@@ -9,7 +9,7 @@ const Product = db.define('product', {
     }
 });
 
-Product.hasOne(Cart, { as: 'cart_item' })
+Product.hasOne(Cart, { as: 'product' })
 // Product.belongsTo(Category);
 
 module.exports = Product;
