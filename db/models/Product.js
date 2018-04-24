@@ -9,4 +9,7 @@ const Product = db.define('product', {
     }
 });
 
+Product.hasMany(Cart, { as: 'cart_item' })
+// Product.hasOne(Category, { as: 'category' });
+
 module.exports = Product;

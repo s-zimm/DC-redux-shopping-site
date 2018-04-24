@@ -1,0 +1,5 @@
+[
+    { "name": "Coffee Maker", "categoryId": 2 },
+    { "name": "Redux Help", "categoryId": 3 },
+    { "name": "Super Amazing Computer", "categoryId": 1 }
+]
