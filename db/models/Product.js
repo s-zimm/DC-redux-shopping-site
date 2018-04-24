@@ -6,6 +6,9 @@ const Cart = require('./Cart');
 const Product = db.define('product', {
     name: {
         type: Sequelize.STRING
+    },
+    price: {
+        type: Sequelize.FLOAT
     }
 });
 

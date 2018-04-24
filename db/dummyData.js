@@ -18,9 +18,9 @@ User.bulkCreate([
 })
 .then(() => {
     Product.bulkCreate([
-        { name: 'Coffee Maker', categoryId: 2 },
-        { name: 'Redux Help', categoryId: 3 },
-        { name: 'Super Amazing Computer', categoryId: 1 },
-        { name: 'Werewolf', categoryId: 4 }
+        { name: 'Coffee Maker', categoryId: 2, price: 19.99 },
+        { name: 'Redux Help', categoryId: 3, price: 9.99  },
+        { name: 'Super Amazing Computer', categoryId: 1, price: 10000 },
+        { name: 'Werewolf', categoryId: 4, price: 14.99 }
     ])
 })
