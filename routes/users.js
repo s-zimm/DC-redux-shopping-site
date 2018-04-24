@@ -43,26 +43,4 @@ router.get('/:userId/cart', (req, res, next) => {
     })
 })
 
-router.post('/:userId/cart/add/product/:productId', (req, res, next) => {
-  Cart.findOrCreate({ where: {
-			userId: req.params.userId, 
-			productId: req.params.productId 
-		},
-		defaults: {
-			userId: req.params.userId, 
-			productId: req.params.productId,
-		}
-	})
-    .spread((cart, created) => {
-		if (created) {
-			res.json(cart)
-		} else {
-			cart.update({
-				count: cart.count + 1
-			})
-			.then(cart => res.json(cart));
-		}
-	});
-});
-
 module.exports = router;
