@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 const products = require('./routes/products');
 const cart = require('./routes/cart');
+const categories = require('./routes/categories');
 
 var app = express();
 
@@ -26,8 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users?', users);
-app.use('/products?', products)
+app.use('/products?', products);
 app.use('/cart', cart);
+app.use('/category', categories);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

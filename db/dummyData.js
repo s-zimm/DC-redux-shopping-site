@@ -12,13 +12,15 @@ User.bulkCreate([
     Category.bulkCreate([
         { name: 'Technology' },
         { name: 'Coffee' },
-        { name: 'Educational' }
+        { name: 'Educational' },
+        { name: 'Board Games' }
     ])
 })
 .then(() => {
     Product.bulkCreate([
         { name: 'Coffee Maker', categoryId: 2 },
         { name: 'Redux Help', categoryId: 3 },
-        { name: 'Super Amazing Computer', categoryId: 1 }
+        { name: 'Super Amazing Computer', categoryId: 1 },
+        { name: 'Werewolf', categoryId: 4 }
     ])
 })

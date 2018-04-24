@@ -6,7 +6,7 @@ const Cart = require('../db/models/Cart');
 
 router.post('/add/user/:userId/product/:productId', (req, res, next) => {
     Cart.create({ userId: req.params.userId, productId: req.params.productId })
-        .then(cart => res.send(cart));
+        .then(cart => res.json(cart));
 });
 
 router.get('/user/:userId', (req, res, next) => {
@@ -17,7 +17,7 @@ router.get('/user/:userId', (req, res, next) => {
     })
     .then(cart => {
         if (cart.length > 0) {
-            res.send(cart)
+            res.json(cart)
         } else {
             res.send('No items in cart')
         }
