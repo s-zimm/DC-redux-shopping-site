@@ -7,4 +7,11 @@ router.get('/', (req, res, next) => {
         .then(products => res.send(products));
 });
 
+router.get('/productId', (req, res, next) => {
+    Product.findOne({
+        where: { id: req.params.productId }
+    })
+    .then(product => res.send(product));
+});
+
 module.exports = router;

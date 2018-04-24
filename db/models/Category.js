@@ -8,6 +8,6 @@ const Category = db.define('category', {
     }
 });
 
-// Category.hasOne(Product, { as: 'category' })
+Category.hasOne(Product, { as: 'category' })
 
 module.exports = Category;

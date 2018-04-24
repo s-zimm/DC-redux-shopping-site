@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
-const Category = require('./Category');
+// const Category = require('./Category');
 const Cart = require('./Cart');
 
 const Product = db.define('product', {
@@ -9,7 +9,7 @@ const Product = db.define('product', {
     }
 });
 
-Product.hasMany(Cart, { as: 'cart_item' })
-// Product.hasOne(Category, { as: 'category' });
+Product.hasOne(Cart, { as: 'cart_item' })
+// Product.belongsTo(Category);
 
 module.exports = Product;

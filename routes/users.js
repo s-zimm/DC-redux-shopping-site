@@ -6,7 +6,7 @@ const User = require('../db/models/User');
 router.get('/', function(req, res, next) {
   User.findAll()
     .then(users => res.send(users))
-    .catch(err => next())
+    .catch(err => next());
 });
 
 router.get('/:userId', (req, res, next) => {
@@ -15,7 +15,16 @@ router.get('/:userId', (req, res, next) => {
       id: req.params.userId
     }
   })
-  .then(user => res.send(user))
-})
+  .then(user => res.send(user));
+});
+
+router.post('/:userId/delete', (req, res, next) => {
+  User.destroy({
+    where: {
+      id: req.params.userId
+    }
+  })
+  .then(user => res.send(user));
+});
 
 module.exports = router;
