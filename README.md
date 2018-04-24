@@ -2,6 +2,8 @@
 Backend for shopping site
 
 # Route Structure
+
+GET:
 There are currently four main endpoints to fetch from:
  * /users
  * /products
@@ -13,3 +15,7 @@ There are currently four main endpoints to fetch from:
  /users, /products, and /category will accept an additional ID parameter (e.g. /users/1 will return a user from the DB with the ID of one).
  
  HOWEVER: /category/:id will return all products within that specific category id.
+ 
+ POST:
+ * cart/add/user/:userId/product/:productId
+ This endpoint will add a product to a user's cart.
